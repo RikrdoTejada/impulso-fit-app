@@ -1,45 +1,67 @@
 <div class="recovery-container">
-    <!-- Header -->
     <header class="header">
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">ImpulsoFit</span>
-            </div>
+        <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">ImpulsoFit</span>
         </div>
+        <a routerLink="/iniciar-sesion" class="back-link">Volver</a>
     </header>
 
-    <!-- Main Body -->
-    <main class="main-content">
-        <div class="split-screen">
-            <!-- Left Column: Form -->
-            <div class="form-column">
-                <div class="form-wrapper">
-                    <h1>Recuperar Contraseña</h1>
-                    <p class="description">Debemos verificar si existe una cuenta enlazada con su email.</p>
-                    <p class="description">Se enviará un correo a su email en caso se encuentre una cuenta.</p>
+    <div class="content-wrapper">
+        <div class="recovery-card">
+            <div class="recovery-form-section">
+                <h2 class="recovery-title">Recuperar Contraseña</h2>
 
-                    <form class="recovery-form">
-                        <div class="form-group full-width">
-                            <label for="email">Correo</label>
-                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                <!-- Step 1: Verify Email -->
+                <div *ngIf="step === 1" class="step-content">
+                    <p class="recovery-subtitle">Ingresa tu correo electrónico para buscar tu cuenta.</p>
+                    <form (ngSubmit)="buscarCuenta()">
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" [(ngModel)]="email" name="email"
+                                placeholder="ejemplo@correo.com" required>
                         </div>
-
-                        <button type="submit" class="btn-submit">Verificar cuenta</button>
-
-                        <div class="back-link">
-                            <a routerLink="/iniciar-sesion">Volver a Iniciar Sesión</a>
-                        </div>
+                        <button type="submit" class="btn-primary">Buscar Cuenta</button>
                     </form>
                 </div>
-            </div>
 
-            <!-- Right Column: Image -->
-            <div class="image-column">
-                <div class="image-wrapper">
-                    <img src="https://placehold.co/600x800/png?text=Recovery+Illustration" alt="Recovery Illustration">
+                <!-- Step 2: Security Question -->
+                <div *ngIf="step === 2" class="step-content">
+                    <p class="recovery-subtitle">Responde a tu pregunta de seguridad.</p>
+                    <form (ngSubmit)="validarRespuesta()">
+                        <div class="form-group">
+                            <label class="security-question-label">{{ securityQuestionText }}</label>
+                            <input type="text" [(ngModel)]="securityAnswer" name="securityAnswer"
+                                placeholder="Tu respuesta" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Validar</button>
+                    </form>
                 </div>
+
+                <!-- Step 3: New Password -->
+                <div *ngIf="step === 3" class="step-content">
+                    <p class="recovery-subtitle">Crea una nueva contraseña segura.</p>
+                    <form (ngSubmit)="cambiarContrasena()">
+                        <div class="form-group">
+                            <label for="newPassword">Nueva Contraseña</label>
+                            <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword"
+                                placeholder="********" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar Contraseña</label>
+                            <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword"
+                                name="confirmPassword" placeholder="********" required>
+                        </div>
+                        <button type="submit" class="btn-primary">Cambiar Contraseña</button>
+                    </form>
+                </div>
+
             </div>
         </div>
-    </main>
+
+        <div class="image-section">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                alt="Fitness Motivation" class="side-image">
+        </div>
+    </div>
 </div>
