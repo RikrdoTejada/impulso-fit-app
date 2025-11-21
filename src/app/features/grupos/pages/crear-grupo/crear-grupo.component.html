@@ -1,0 +1,114 @@
+<div class="crear-grupo-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item active">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="form-card">
+            <div class="form-header">
+                <h1 class="form-title">Crear Grupo</h1>
+                <p class="form-subtitle">Conecta con personas que comparten tu pasión.</p>
+            </div>
+
+            <form (ngSubmit)="crearGrupo()">
+                <!-- Cover Photo -->
+                <div class="form-group">
+                    <div class="cover-photo-upload">
+                        <span class="upload-icon">📷</span>
+                        <span class="upload-text">Sube una foto de portada (Recomendado)</span>
+                    </div>
+                </div>
+
+                <!-- Group Name -->
+                <div class="form-group">
+                    <label for="nombreGrupo">Nombre del Grupo</label>
+                    <input type="text" id="nombreGrupo" [(ngModel)]="nombreGrupo" name="nombreGrupo" class="form-input"
+                        placeholder="Ej: Runners Lima">
+                </div>
+
+                <!-- Sport -->
+                <div class="form-group">
+                    <label for="deporte">Deporte</label>
+                    <select id="deporte" [(ngModel)]="deporte" name="deporte" class="form-select">
+                        <option value="" disabled selected>Selecciona un deporte</option>
+                        <option value="Running">Running</option>
+                        <option value="Ciclismo">Ciclismo</option>
+                        <option value="Fútbol">Fútbol</option>
+                        <option value="Gimnasio">Gimnasio</option>
+                        <option value="Yoga">Yoga</option>
+                    </select>
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" [(ngModel)]="descripcion" name="descripcion" class="form-textarea"
+                        [maxlength]="maxCaracteres" placeholder="Describe de qué trata tu grupo..."></textarea>
+                    <div class="char-counter">
+                        {{ caracteresUsados }}/{{ maxCaracteres }}
+                    </div>
+                </div>
+
+                <!-- Location -->
+                <div class="form-group">
+                    <label for="ubicacion">Ubicación</label>
+                    <div class="location-input-group">
+                        <input type="text" id="ubicacion" [(ngModel)]="ubicacion" name="ubicacion" class="form-input"
+                            placeholder="Ej: Miraflores, Lima">
+                        <button type="button" class="btn-map">Fijar en el mapa</button>
+                    </div>
+                </div>
+
+                <!-- Privacy -->
+                <div class="form-group">
+                    <label class="privacy-label">Privacidad</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="privacidad" value="publico" [(ngModel)]="privacidad">
+                            <div class="radio-content">
+                                <span class="radio-title">Público</span>
+                                <span class="radio-desc">Cualquiera puede ver quién está en el grupo y lo que
+                                    publican.</span>
+                            </div>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="privacidad" value="privado" [(ngModel)]="privacidad">
+                            <div class="radio-content">
+                                <span class="radio-title">Privado</span>
+                                <span class="radio-desc">Solo los miembros pueden ver quién está en el grupo y lo que
+                                    publican.</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" (click)="cancelar()">Cancelar</button>
+                    <button type="submit" class="btn-create">Crear Grupo</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>
