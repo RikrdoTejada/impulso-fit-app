@@ -40,6 +40,30 @@ export const routes: Routes = [
     {
         path: 'grupos',
         loadComponent: () => import('./features/grupos/pages/grupos/grupos.component').then(m => m.GruposComponent)
+    },
+    {
+        path: 'grupo-detalle',
+        loadComponent: () => import('./features/grupos/pages/grupo-detalle/grupo-detalle.component').then(m => m.GrupoDetalleComponent)
+    },
+    {
+        path: 'publicar-grupo',
+        loadComponent: () => import('./features/grupos/pages/publicar-grupo/publicar-grupo.component').then(m => m.PublicarGrupoComponent)
+    },
+    {
+        path: 'perfil',
+        loadComponent: () => import('./features/perfil/pages/perfil/perfil.component').then(m => m.PerfilComponent)
+    },
+    {
+        path: 'editar-perfil',
+        loadComponent: () => import('./features/perfil/pages/editar-perfil/editar-perfil.component').then(m => m.EditarPerfilComponent)
+    },
+    {
+        path: 'eliminar-perfil',
+        loadComponent: () => import('./features/perfil/pages/eliminar-perfil/eliminar-perfil.component').then(m => m.EliminarPerfilComponent)
+    },
+    {
+        path: 'crear-grupo',
+        loadComponent: () => import('./features/grupos/pages/crear-grupo/crear-grupo.component').then(m => m.CrearGrupoComponent)
     }
 ];
 

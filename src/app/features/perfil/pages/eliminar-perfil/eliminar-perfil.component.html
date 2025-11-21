@@ -1,0 +1,52 @@
+<div class="eliminar-perfil-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item active">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="warning-card">
+            <div class="warning-icon">⚠️</div>
+            <h2 class="warning-title">Eliminar perfil</h2>
+
+            <p class="warning-text">
+                Estás a punto de eliminar tu perfil de ImpulsoFit. Al hacerlo, perderás de forma permanente:
+            </p>
+
+            <ul class="warning-list">
+                <li>Tu información personal y de contacto.</li>
+                <li>Tu historial de retos y progresos.</li>
+                <li>Tu participación en grupos y comunidades.</li>
+            </ul>
+
+            <p class="warning-subtext">
+                Esta acción no se puede deshacer. ¿Estás seguro de que deseas continuar?
+            </p>
+
+            <div class="actions">
+                <button class="btn-cancel" (click)="cancelar()">Cancelar</button>
+                <button class="btn-delete" (click)="eliminar()">Eliminar Perfil</button>
+            </div>
+        </div>
+    </main>
+</div>

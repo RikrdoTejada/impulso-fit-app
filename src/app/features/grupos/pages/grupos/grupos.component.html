@@ -1,6 +1,11 @@
 <div class="grupos-container">
     <!-- Header -->
     <header class="header">
+        <div class="header-actions">
+            <button routerLink="/crear-grupo" class="btn-create-group">
+                + Crear Grupo
+            </button>
+        </div>
         <div class="header-content">
             <div class="logo">
                 <span class="logo-icon">⚡</span>
@@ -15,7 +20,7 @@
                     <span class="nav-icon">👥</span>
                     <span class="nav-text">Grupos</span>
                 </a>
-                <a href="#" class="nav-item">
+                <a routerLink="/perfil" class="nav-item">
                     <span class="nav-icon">👤</span>
                     <span class="nav-text">Perfil</span>
                 </a>
@@ -55,7 +60,7 @@
                             <span class="group-subtitle">500 Miembros</span>
                             <p class="group-desc">El mejor gimnasio de la ciudad con entrenadores certificados.</p>
                         </div>
-                        <button class="btn-view">Ver</button>
+                        <button class="btn-view" routerLink="/grupo-detalle">Ver</button>
                     </div>
                 </div>
             </section>
