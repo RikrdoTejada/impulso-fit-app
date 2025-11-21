@@ -80,6 +80,10 @@ export const routes: Routes = [
     {
         path: 'participacion-reto',
         loadComponent: () => import('./features/retos/pages/participacion-reto/participacion-reto.component').then(m => m.ParticipacionRetoComponent)
+    },
+    {
+        path: 'estadisticas',
+        loadComponent: () => import('./features/perfil/pages/estadisticas/estadisticas.component').then(m => m.EstadisticasComponent)
     }
 ];
 

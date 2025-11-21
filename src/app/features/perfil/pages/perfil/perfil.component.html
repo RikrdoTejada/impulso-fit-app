@@ -1,5 +1,4 @@
 <div class="perfil-container">
-    <!-- Header -->
     <header class="header">
         <div class="header-content">
             <div class="logo">
@@ -23,11 +22,9 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="main-content">
         <div class="content-grid">
 
-            <!-- Left Column: Sidebar -->
             <div class="sidebar-column">
                 <div class="profile-sidebar">
                     <div class="avatar-container">
@@ -39,9 +36,13 @@
                         Editar Perfil
                     </button>
 
-                    <button class="btn-groups">Grupos</button>
+                    <button routerLink="/estadisticas" class="btn-stats"
+                        style="margin-top: 10px; width: 100%; padding: 8px; border: 1px solid #10232B; background: #10232B; color: white; border-radius: 5px; cursor: pointer;">
+                        Estadísticas
+                    </button>
 
-                    <div class="groups-list">
+                    <div class="groups-list" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 10px; color: #10232B;">Mis Grupos</h4>
                         <div class="group-item">
                             <img src="https://placehold.co/60x40/png?text=UPC" alt="Group" class="group-img">
                             <span class="group-name">UPC Cycling</span>
@@ -58,9 +59,7 @@
                 </div>
             </div>
 
-            <!-- Right Column: Info & Feed -->
             <div class="feed-column">
-                <!-- Profile Info -->
                 <div class="profile-info-section">
                     <div class="info-header">
                         <div class="user-details">
@@ -80,12 +79,9 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn-follow">Seguir</button>
                 </div>
 
-                <!-- Personal Feed -->
                 <div class="personal-feed">
-                    <!-- Post Card -->
                     <div class="card post-card">
                         <div class="post-header">
                             <img src="https://placehold.co/50x50/png?text=EM" alt="User Avatar" class="user-avatar">
