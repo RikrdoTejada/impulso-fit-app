@@ -64,6 +64,22 @@ export const routes: Routes = [
     {
         path: 'crear-grupo',
         loadComponent: () => import('./features/grupos/pages/crear-grupo/crear-grupo.component').then(m => m.CrearGrupoComponent)
+    },
+    {
+        path: 'retos',
+        loadComponent: () => import('./features/retos/pages/retos/retos.component').then(m => m.RetosComponent)
+    },
+    {
+        path: 'crear-reto',
+        loadComponent: () => import('./features/retos/pages/crear-reto/crear-reto.component').then(m => m.CrearRetoComponent)
+    },
+    {
+        path: 'detalle-reto',
+        loadComponent: () => import('./features/retos/pages/detalle-reto/detalle-reto.component').then(m => m.DetalleRetoComponent)
+    },
+    {
+        path: 'participacion-reto',
+        loadComponent: () => import('./features/retos/pages/participacion-reto/participacion-reto.component').then(m => m.ParticipacionRetoComponent)
     }
 ];
 

@@ -43,77 +43,79 @@
                             <button class="btn-joined">Unido</button>
                         </div>
                     </div>
-                    <div class="nav-tabs">
-                        <button class="tab-btn active">Retos</button>
-                        <button class="tab-btn secondary">Dejar Grupo</button>
+                    <div class="group-actions">
+                        <button class="btn-action active">Publicaciones</button>
+                        <button routerLink="/retos" class="btn-action">Retos</button>
+                        <button class="btn-action">Miembros</button>
+                        <button class="btn-action btn-leave">Dejar Grupo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="content-grid">
+
+            <!-- Left Column: Feed -->
+            <div class="feed-column">
+                <!-- Post Card -->
+                <div class="card post-card">
+                    <div class="post-header">
+                        <img src="https://placehold.co/50x50/png?text=EM" alt="User Avatar" class="user-avatar">
+                        <div class="post-info">
+                            <span class="user-name">Eduardo M.</span>
+                            <span class="post-time">Hace 2 horas</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">Hard day at Gym! 🏋️</h3>
+                        <div class="post-image-container">
+                            <img src="https://placehold.co/600x400/png?text=Gym+Workout" alt="Post Image"
+                                class="post-image">
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="interaction">
+                            <span class="icon">❤️</span>
+                            <span class="count">67</span>
+                        </div>
+                        <div class="interaction">
+                            <span class="icon">💬</span>
+                            <span class="count">18</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Two Column Layout -->
-            <div class="content-grid">
-
-                <!-- Left Column: Feed -->
-                <div class="feed-column">
-                    <!-- Post Card -->
-                    <div class="card post-card">
-                        <div class="post-header">
-                            <img src="https://placehold.co/50x50/png?text=EM" alt="User Avatar" class="user-avatar">
-                            <div class="post-info">
-                                <span class="user-name">Eduardo M.</span>
-                                <span class="post-time">Hace 2 horas</span>
-                            </div>
+            <!-- Right Column: Sidebar -->
+            <div class="sidebar-column">
+                <div class="card info-card">
+                    <p class="group-description">Somos lo mejor en deporte y motivación 🏋️💪</p>
+                    <div class="meta-info">
+                        <span class="created-date">Creado: 11 Marzo 2025</span>
+                        <div class="creator-info">
+                            <img src="https://placehold.co/30x30/png?text=PT" alt="Creator" class="creator-avatar">
+                            <span class="creator-name">Paolo T.</span>
                         </div>
-                        <div class="post-content">
-                            <h3 class="post-title">Hard day at Gym! 🏋️</h3>
-                            <div class="post-image-container">
-                                <img src="https://placehold.co/600x400/png?text=Gym+Workout" alt="Post Image"
-                                    class="post-image">
-                            </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-value">505</span>
+                            <span class="stat-label">miembros</span>
                         </div>
-                        <div class="post-footer">
-                            <div class="interaction">
-                                <span class="icon">❤️</span>
-                                <span class="count">67</span>
-                            </div>
-                            <div class="interaction">
-                                <span class="icon">💬</span>
-                                <span class="count">18</span>
-                            </div>
+                        <div class="stat-item">
+                            <span class="stat-value">25+</span>
+                            <span class="stat-label">retos activos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">100+</span>
+                            <span class="stat-label">Publicaciones</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Right Column: Sidebar -->
-                <div class="sidebar-column">
-                    <div class="card info-card">
-                        <p class="group-description">Somos lo mejor en deporte y motivación 🏋️💪</p>
-                        <div class="meta-info">
-                            <span class="created-date">Creado: 11 Marzo 2025</span>
-                            <div class="creator-info">
-                                <img src="https://placehold.co/30x30/png?text=PT" alt="Creator" class="creator-avatar">
-                                <span class="creator-name">Paolo T.</span>
-                            </div>
-                        </div>
-                        <div class="stats-grid">
-                            <div class="stat-item">
-                                <span class="stat-value">505</span>
-                                <span class="stat-label">miembros</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">25+</span>
-                                <span class="stat-label">retos activos</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-value">100+</span>
-                                <span class="stat-label">Publicaciones</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
         </div>
+
     </main>
 </div>
