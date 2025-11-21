@@ -1,0 +1,112 @@
+<div class="grupos-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item active">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+
+            <!-- Search and Actions -->
+            <section class="search-section">
+                <div class="filters">
+                    <input type="text" placeholder="Búsqueda por nombre" class="search-input">
+                    <select class="sport-select">
+                        <option value="" disabled selected>Escoge un deporte...</option>
+                        <option value="running">Running</option>
+                        <option value="cycling">Ciclismo</option>
+                        <option value="yoga">Yoga</option>
+                        <option value="crossfit">Crossfit</option>
+                    </select>
+                </div>
+                <button class="btn-create" routerLink="/crear-grupo">+ Crear Grupo</button>
+            </section>
+
+            <!-- Tus Grupos -->
+            <section class="your-groups-section">
+                <h2 class="section-title">Tus Grupos</h2>
+                <div class="card big-group-card">
+                    <div class="card-image">
+                        <img src="https://placehold.co/800x300/png?text=Gym+Cover" alt="Gym Cover">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-info">
+                            <h3 class="group-title">Gimnasio Real Club</h3>
+                            <span class="group-subtitle">500 Miembros</span>
+                            <p class="group-desc">El mejor gimnasio de la ciudad con entrenadores certificados.</p>
+                        </div>
+                        <button class="btn-view">Ver</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recomendados para ti -->
+            <section class="recommended-section">
+                <h2 class="section-title">Recomendados para ti</h2>
+                <div class="recommended-grid">
+                    <!-- Card 1 -->
+                    <div class="card recommended-card">
+                        <img src="https://placehold.co/60x60/png?text=UPC" alt="Logo" class="rec-logo">
+                        <div class="rec-info">
+                            <h4 class="rec-title">UPC Cycling Team</h4>
+                            <span class="rec-members">120 Miembros</span>
+                            <p class="rec-desc">Equipo oficial de ciclismo UPC.</p>
+                        </div>
+                        <button class="btn-join">Unirse</button>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="card recommended-card">
+                        <img src="https://placehold.co/60x60/png?text=Yoga" alt="Logo" class="rec-logo">
+                        <div class="rec-info">
+                            <h4 class="rec-title">Morning Yoga</h4>
+                            <span class="rec-members">85 Miembros</span>
+                            <p class="rec-desc">Clases de yoga al amanecer.</p>
+                        </div>
+                        <button class="btn-join">Unirse</button>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="card recommended-card">
+                        <img src="https://placehold.co/60x60/png?text=Run" alt="Logo" class="rec-logo">
+                        <div class="rec-info">
+                            <h4 class="rec-title">Night Runners</h4>
+                            <span class="rec-members">300 Miembros</span>
+                            <p class="rec-desc">Corremos de noche por la ciudad.</p>
+                        </div>
+                        <button class="btn-join">Unirse</button>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="card recommended-card">
+                        <img src="https://placehold.co/60x60/png?text=Box" alt="Logo" class="rec-logo">
+                        <div class="rec-info">
+                            <h4 class="rec-title">Boxing Club</h4>
+                            <span class="rec-members">150 Miembros</span>
+                            <p class="rec-desc">Entrenamiento de boxeo intenso.</p>
+                        </div>
+                        <button class="btn-join">Unirse</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</div>
