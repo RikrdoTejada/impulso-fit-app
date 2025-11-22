@@ -1,0 +1,111 @@
+<div class="home-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item active">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-grid">
+            <!-- Left Column: Feed -->
+            <div class="feed-column">
+                <!-- Create Post -->
+                <div class="card create-post">
+                    <input type="text" placeholder="Coméntanos que has hecho hoy..." class="post-input"
+                        routerLink="/publicar">
+                    <button class="btn-publish" routerLink="/publicar">Publicar</button>
+                </div>
+
+                <!-- Post Card -->
+                <div class="card post-card">
+                    <div class="post-header">
+                        <img src="https://placehold.co/50x50/png?text=EM" alt="Avatar" class="avatar">
+                        <div class="post-info">
+                            <span class="user-name">Eduardo M.</span>
+                            <span class="post-time">Hace 2 horas</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <h3 class="post-title">Morning Ride! 🚴</h3>
+                        <p class="post-desc">Excelente ruta el día de hoy, mejorando tiempos.</p>
+                    </div>
+                    <div class="post-media">
+                        <div class="media-item">
+                            <img src="https://placehold.co/400x300/png?text=Run" alt="Run Image">
+                        </div>
+                        <div class="media-item video">
+                            <img src="https://placehold.co/400x300/png?text=Video" alt="Video Thumbnail">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                    </div>
+                    <div class="post-footer">
+                        <div class="interaction">
+                            <span class="icon">❤️</span>
+                            <span class="count">29 likes</span>
+                        </div>
+                        <div class="interaction" routerLink="/comentarios" style="cursor: pointer;">
+                            <span class="icon">💬</span>
+                            <span class="count">5 comentarios</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <div class="sidebar-column">
+                <div class="sidebar-header">
+                    <h3>Grupos Populares</h3>
+                    <a href="#" class="view-more">Ver más >>></a>
+                </div>
+                <div class="groups-list">
+                    <!-- Group Card 1 -->
+                    <div class="card group-card">
+                        <img src="https://placehold.co/50x50/png?text=R" alt="Group Icon" class="group-icon">
+                        <div class="group-info">
+                            <span class="group-name">Runners CDMX</span>
+                            <span class="group-members">1.2k miembros</span>
+                        </div>
+                        <button class="btn-join">Unirse</button>
+                    </div>
+                    <!-- Group Card 2 -->
+                    <div class="card group-card">
+                        <img src="https://placehold.co/50x50/png?text=Y" alt="Group Icon" class="group-icon">
+                        <div class="group-info">
+                            <span class="group-name">Yoga Life</span>
+                            <span class="group-members">850 miembros</span>
+                        </div>
+                        <button class="btn-join">Unirse</button>
+                    </div>
+                    <!-- Group Card 3 -->
+                    <div class="card group-card">
+                        <img src="https://placehold.co/50x50/png?text=C" alt="Group Icon" class="group-icon">
+                        <div class="group-info">
+                            <span class="group-name">CrossFit Power</span>
+                            <span class="group-members">2.5k miembros</span>
+                        </div>
+                        <button class="btn-join">Unirse</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
