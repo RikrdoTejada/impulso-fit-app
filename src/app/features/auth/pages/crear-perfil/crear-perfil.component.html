@@ -1,0 +1,57 @@
+<div class="editar-perfil-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="form-card">
+            <h1 class="form-title">Crear tu Perfil</h1>
+
+            <form (ngSubmit)="finalizarRegistro()">
+                <!-- Row 1 -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos</label>
+                        <input type="text" id="apellidos" [(ngModel)]="apellidos" name="apellidos" class="form-input"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="ubicacion">Ubicación</label>
+                        <input type="text" id="ubicacion" [(ngModel)]="ubicacion" name="ubicacion" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                        <input type="date" id="fechaNacimiento" [(ngModel)]="fechaNacimiento" name="fechaNacimiento"
+                            class="form-input">
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="form-group full-width">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" [(ngModel)]="bio" name="bio" class="form-textarea"></textarea>
+                </div>
+
+                <!-- Action Button -->
+                <div class="form-actions" style="display: flex; gap: 20px; justify-content: center; margin-top: 30px;">
+                    <button type="submit" class="btn-save">Finalizar Registro</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>

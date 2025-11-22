@@ -10,7 +10,7 @@
     --font-family: 'Roboto', sans-serif;
 }
 
-.register-container {
+.editar-perfil-container {
     font-family: var(--font-family);
     min-height: 100vh;
     background-color: var(--color-background);
@@ -51,69 +51,45 @@
 /* Main Content */
 .main-content {
     flex: 1;
+    padding: 2rem;
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    align-items: flex-start;
 }
 
-.split-screen {
-    display: flex;
+.form-card {
     background-color: var(--color-white);
+    padding: 2rem 3rem;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    overflow: hidden;
-    max-width: 1000px;
     width: 100%;
-    min-height: 600px;
+    max-width: 800px;
 }
 
-/* Left Column: Form */
-.form-column {
-    flex: 1;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.form-wrapper {
-    max-width: 400px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-h1 {
+.form-title {
+    text-align: center;
+    margin: 0 0 2rem;
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 2rem;
     color: var(--color-text-main);
-    text-align: center;
-}
-
-.register-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 .form-row {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-group {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.form-group.half-width {
-    flex: 1;
-}
-
 .form-group.full-width {
     width: 100%;
+    margin-bottom: 2rem;
 }
 
 label {
@@ -122,10 +98,7 @@ label {
     color: var(--color-text-secondary);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select {
+.form-input {
     padding: 0.8rem;
     border: 1px solid var(--color-border);
     border-radius: 6px;
@@ -133,97 +106,57 @@ select {
     outline: none;
     transition: border-color 0.3s;
     font-family: var(--font-family);
-    width: 100%;
-    box-sizing: border-box;
 }
 
-input:focus,
-select:focus {
+.form-input:focus {
     border-color: var(--color-header);
 }
 
-/* Gender Buttons */
-.gender-buttons {
+.form-textarea {
+    padding: 0.8rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: var(--font-family);
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-textarea:focus {
+    border-color: var(--color-header);
+}
+
+.form-actions {
     display: flex;
-    gap: 1rem;
-    align-items: center;
-    height: 100%;
+    justify-content: center;
 }
 
-.gender-option {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    font-size: 0.9rem;
-}
-
-/* Date of Birth Inputs */
-.dob-inputs {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.dob-inputs span {
-    font-weight: bold;
-    color: var(--color-text-secondary);
-}
-
-.btn-submit {
+.btn-save {
     background-color: var(--color-header);
     color: var(--color-white);
     border: none;
-    padding: 1rem;
+    padding: 1rem 3rem;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
     transition: opacity 0.3s;
-    margin-top: 1rem;
 }
 
-.btn-submit:hover {
+.btn-save:hover {
     opacity: 0.9;
-}
-
-/* Right Column: Image */
-.image-column {
-    flex: 1;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.image-wrapper {
-    width: 100%;
-    height: 100%;
-}
-
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .split-screen {
-        flex-direction: column;
-    }
-
-    .image-column {
-        display: none;
-    }
-
-    .form-column {
-        padding: 2rem;
-    }
-
     .form-row {
         flex-direction: column;
         gap: 1.5rem;
+    }
+
+    .form-card {
+        padding: 1.5rem;
     }
 }

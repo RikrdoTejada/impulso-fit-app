@@ -26,6 +26,10 @@ export const routes: Routes = [
         loadComponent: () => import('./features/auth/pages/register/register.component').then(m => m.RegisterComponent)
     },
     {
+        path: 'crear-perfil',
+        loadComponent: () => import('./features/auth/pages/crear-perfil/crear-perfil.component').then(m => m.CrearPerfilComponent)
+    },
+    {
         path: 'home',
         loadComponent: () => import('./features/home/pages/home/home.component').then(m => m.HomeComponent)
     },
