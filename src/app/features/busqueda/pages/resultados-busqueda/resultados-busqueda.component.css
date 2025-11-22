@@ -1,0 +1,161 @@
+/* Variables Locales (Mismas del proyecto) */
+:host {
+    --color-header: #10232B;
+    --color-primary: #2FD0AF;
+    --color-bg: #F7FAFF;
+    --color-white: #FFFFFF;
+    --color-text: #10232B;
+    --color-gray: #666;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.page-container {
+    background-color: var(--color-bg);
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header simple para resultados */
+.header { background: var(--color-header); padding: 0.5rem 2rem; position: sticky; top: 0; z-index: 100; color: white; }
+.header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: 700; font-size: 1.2rem; display: flex; align-items: center; gap: 5px;}
+.search-placeholder { font-size: 0.9rem; opacity: 0.9; background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px;}
+.nav-menu { display: flex; gap: 15px; }
+.nav-item { text-decoration: none; font-size: 1.2rem; }
+
+/* Main Layout */
+.main-content { padding: 2rem 1rem; }
+.results-wrapper { max-width: 1000px; margin: 0 auto; }
+
+.section-title {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid var(--color-primary);
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.count { color: var(--color-gray); font-size: 1rem; font-weight: 400; }
+.divider { border: 0; border-top: 1px solid #ddd; margin: 3rem 0; }
+
+/* --- USERS GRID (PERFILES) --- */
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive automático */
+    gap: 20px;
+}
+
+.user-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+.user-card:hover { transform: translateY(-5px); }
+
+.card-header-bg {
+    height: 60px;
+    width: 100%;
+    background: linear-gradient(to right, #10232B, #1b3a47);
+}
+
+.avatar-wrapper {
+    margin-top: -40px;
+    padding: 3px;
+    background: white;
+    border-radius: 50%;
+}
+
+.avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info { padding: 1rem; flex: 1; }
+.user-name { font-size: 1.1rem; margin: 0.5rem 0 0.2rem; color: var(--color-text); }
+.user-email { font-size: 0.85rem; color: var(--color-gray); margin-bottom: 0.5rem; word-break: break-all;}
+.badge {
+    background: #eee;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+.btn-view-profile {
+    width: 80%;
+    margin-bottom: 1.5rem;
+    padding: 0.6rem;
+    border: 1px solid var(--color-primary);
+    background: transparent;
+    color: var(--color-primary);
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-view-profile:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* --- CHALLENGES LIST (RETOS) --- */
+.challenges-list { display: flex; flex-direction: column; gap: 15px; }
+
+.challenge-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.challenge-icon {
+    background: #FFF4E5;
+    color: #FF9800;
+    width: 50px; height: 50px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.challenge-content { flex: 1; }
+.challenge-title { margin: 0 0 5px; font-size: 1.1rem; color: var(--color-text); }
+.challenge-group { font-size: 0.85rem; color: var(--color-gray); margin-bottom: 10px; }
+.challenge-desc { font-size: 0.9rem; color: #444; margin-bottom: 10px; }
+.challenge-meta { display: flex; gap: 15px; font-size: 0.8rem; font-weight: 600; color: var(--color-header); }
+
+.btn-join-challenge {
+    padding: 0.5rem 1.2rem;
+    background: var(--color-header);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: center;
+}
+
+/* No Results */
+.no-results { text-align: center; margin-top: 4rem; color: var(--color-gray); }
+.no-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .challenge-card { flex-direction: column; }
+    .btn-join-challenge { width: 100%; margin-top: 10px; }
+}

@@ -6,6 +6,18 @@
                 <span class="logo-icon">⚡</span>
                 <span class="logo-text">ImpulsoFit</span>
             </div>
+
+            <div class="search-bar-container">
+                <span class="search-icon">🔍</span>
+                <input 
+                    type="text" 
+                    placeholder="Buscar atletas..." 
+                    [(ngModel)]="searchTerm" 
+                    (keyup.enter)="buscarUsuario()"
+                    class="search-input"
+                >
+            </div>
+
             <nav class="nav-menu">
                 <a routerLink="/home" class="nav-item active">
                     <span class="nav-icon">🏠</span>

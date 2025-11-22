@@ -1,0 +1,81 @@
+<div class="page-container">
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <div class="search-placeholder">
+                Resultados para: <strong>"{{ terminoBusqueda() }}"</strong>
+             </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item"><span class="nav-icon">🏠</span></a>
+                <a routerLink="/grupos" class="nav-item"><span class="nav-icon">👥</span></a>
+                <a routerLink="/perfil" class="nav-item"><span class="nav-icon">👤</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="results-wrapper">
+            
+            <div *ngIf="loading()" class="loading-state">
+                <p>Buscando en ImpulsoFit...</p>
+             </div>
+
+            <div *ngIf="!loading()" class="content-sections">
+                
+                <section class="result-section" *ngIf="resultados.perfiles.length > 0">
+                    <h2 class="section-title">Usuarios Encontrados <span class="count">({{resultados.perfiles.length}})</span></h2>
+                    
+                    <div class="users-grid">
+                        <div class="user-card" *ngFor="let perfil of resultados.perfiles">
+                            <div class="card-header-bg"></div>
+                            <div class="avatar-wrapper">
+                                <img [src]="'https://placehold.co/100x100/10232B/FFF?text=' + getIniciales(perfil.nombres)" 
+                                     alt="Avatar" class="avatar">
+                            </div>
+                            <div class="user-info">
+                                <h3 class="user-name">{{ perfil.nombres }}</h3>
+                                <p class="user-email">{{ perfil.email }}</p>
+                                <span class="user-role badge">{{ perfil.role === 'ROLE_USER' ? 'Atleta' : 'Admin' }}</span>
+                            </div>
+                            <button class="btn-view-profile" [routerLink]="['/perfil-usuario', perfil.idPerfil]">
+                                Ver Perfil
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <hr *ngIf="resultados.perfiles.length > 0 && resultados.retos.length > 0" class="divider">
+
+                <section class="result-section" *ngIf="resultados.retos.length > 0">
+                    <h2 class="section-title">Retos Relacionados <span class="count">({{resultados.retos.length}})</span></h2>
+                    
+                    <div class="challenges-list">
+                        <div class="challenge-card" *ngFor="let reto of resultados.retos">
+                            <div class="challenge-icon">🏆</div>
+                            <div class="challenge-content">
+                                <h3 class="challenge-title">{{ reto.titulo }}</h3>
+                                <p class="challenge-group">De: <strong>{{ reto.grupoNombre }}</strong></p>
+                                <p class="challenge-desc">{{ reto.descripcion }}</p>
+                                <div class="challenge-meta">
+                                    <span class="meta-item">🎯 Meta: {{ reto.objetivoTotal }} {{ reto.unidad }}</span>
+                                    <span class="meta-item">📅 Fin: {{ reto.fecha_fin }}</span>
+                                </div>
+                            </div>
+                            <button class="btn-join-challenge">Unirse</button>
+                        </div>
+                    </div>
+                </section>
+
+                <div *ngIf="resultados.perfiles.length === 0 && resultados.retos.length === 0 && resultados.grupos.length === 0" class="no-results">
+                    <span class="no-icon">🤷‍♂️</span>
+                    <h3>No encontramos nada para "{{ terminoBusqueda() }}"</h3>
+                    <p>Intenta buscar con otro nombre o revisa la ortografía.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>

@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './features/home/pages/home/home.component';
+import { ResultadosBusquedaComponent } from './features/busqueda/pages/resultados-busqueda/resultados-busqueda.component';
 
 export const routes: Routes = [
     {
@@ -29,10 +31,7 @@ export const routes: Routes = [
         path: 'crear-perfil',
         loadComponent: () => import('./features/auth/pages/crear-perfil/crear-perfil.component').then(m => m.CrearPerfilComponent)
     },
-    {
-        path: 'home',
-        loadComponent: () => import('./features/home/pages/home/home.component').then(m => m.HomeComponent)
-    },
+    { path: 'home', component: HomeComponent },
     {
         path: 'comentarios',
         loadComponent: () => import('./features/comentarios/pages/comentarios/comentarios.component').then(m => m.ComentariosComponent)
@@ -88,6 +87,17 @@ export const routes: Routes = [
     {
         path: 'estadisticas',
         loadComponent: () => import('./features/perfil/pages/estadisticas/estadisticas.component').then(m => m.EstadisticasComponent)
+    },
+    {
+        path: 'perfil-usuario',
+        loadComponent: () => import('./features/perfil/pages/perfil-usuario/perfil-usuario.component').then(m => m.PerfilUsuarioComponent)
+    },
+    {
+        path: 'buscar',
+        loadComponent: () => import('./features/busqueda/pages/resultados-busqueda/resultados-busqueda.component').then(m => m.ResultadosBusquedaComponent)
+    },
+    {
+        path: 'resultados', component: ResultadosBusquedaComponent 
     }
 ];
 

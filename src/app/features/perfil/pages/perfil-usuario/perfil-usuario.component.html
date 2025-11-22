@@ -1,0 +1,116 @@
+<div class="perfil-container">
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span><span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item">
+                    <span class="nav-icon">👥</span><span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item">
+                    <span class="nav-icon">👤</span><span class="nav-text">Mi Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="content-grid">
+
+            <div class="sidebar-column">
+                <div class="profile-sidebar">
+                    <div class="avatar-container">
+                        <img [src]="user.avatar" alt="User Avatar" class="profile-avatar">
+                    </div>
+
+                    <button 
+                        (click)="toggleFollow()" 
+                        class="btn-action"
+                        [class.following]="isFollowing()">
+                        {{ isFollowing() ? 'Siguiendo' : 'Seguir' }}
+                    </button>
+
+                    <button routerLink="/estadisticas" class="btn-stats">
+                        Ver Estadísticas
+                    </button>
+
+                    <div class="groups-list">
+                        <h4>Sus Grupos</h4>
+                        <div class="group-item">
+                            <img src="https://placehold.co/60x40/png?text=UPC" alt="Group" class="group-img">
+                            <span class="group-name">UPC Cycling</span>
+                        </div>
+                        <div class="group-item">
+                            <img src="https://placehold.co/60x40/png?text=Gym" alt="Group" class="group-img">
+                            <span class="group-name">Gimnasio Real Club</span>
+                        </div>
+                        <div class="group-item">
+                            <img src="https://placehold.co/60x40/png?text=Run" alt="Group" class="group-img">
+                            <span class="group-name">Runners Lima</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feed-column">
+                
+                <div class="profile-info-section">
+                    <div class="info-header">
+                        <div class="user-details">
+                            <h1 class="user-fullname">{{ user.name }}</h1>
+                            <span class="user-location">📍 {{ user.location }}</span>
+                            <p class="user-bio">{{ user.bio }}</p>
+                        </div>
+                        <div class="user-stats">
+                            <div class="stat-box">
+                                <span class="stat-number">{{ user.followers }}</span>
+                                <span class="stat-label">Seguidores</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">{{ user.following }}</span>
+                                <span class="stat-label">Siguiendo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="separator">
+
+                <div class="personal-feed">
+                    <div class="card post-card">
+                        <div class="post-header">
+                            <img [src]="user.avatar" alt="User Avatar" class="user-avatar">
+                            <div class="post-info">
+                                <span class="user-name">{{ user.name }}</span>
+                                <span class="post-time">Hace 5 horas</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">Morning Ride! 🚴</h3>
+                            <p class="post-desc">Gran ruta la de hoy por la costa verde. El clima estuvo perfecto.</p>
+                            <div class="post-image-grid">
+                                <img src="https://placehold.co/300x200/png?text=Ride+1" alt="Post Image">
+                                <img src="https://placehold.co/300x200/png?text=Ride+2" alt="Post Image">
+                                <img src="https://placehold.co/300x200/png?text=Ride+3" alt="Post Image">
+                            </div>
+                        </div>
+                        <div class="post-footer">
+                            <div class="interaction">
+                                <span class="icon">❤️</span> <span class="count">45</span>
+                            </div>
+                            <div class="interaction">
+                                <span class="icon">💬</span> <span class="count">12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
