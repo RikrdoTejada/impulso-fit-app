@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+<<<<<<< HEAD
 import { AUTH_ROUTES } from './features/auth/auth.routes';
 
 export const routes: Routes = [
@@ -60,3 +61,7 @@ export const routes: Routes = [
     }
 ];
 
+=======
+
+export const routes: Routes = [];
+>>>>>>> 6cc7fd06921089d2e0b57bb51914efbef29f0f95
