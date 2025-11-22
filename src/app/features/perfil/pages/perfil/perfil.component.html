@@ -1,0 +1,122 @@
+<div class="perfil-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item active">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-grid">
+
+            <!-- Left Column: Sidebar -->
+            <div class="sidebar-column">
+                <div class="profile-sidebar">
+                    <div class="avatar-container">
+                        <img src="https://placehold.co/150x150/png?text=EM" alt="User Avatar" class="profile-avatar">
+                    </div>
+
+                    <button routerLink="/editar-perfil" class="btn-edit-profile"
+                        style="margin-top: 15px; width: 100%; padding: 8px; border: 1px solid #10232B; background: transparent; color: #10232B; border-radius: 5px; cursor: pointer;">
+                        Editar Perfil
+                    </button>
+
+                    <button class="btn-groups">Grupos</button>
+
+                    <div class="groups-list">
+                        <div class="group-item">
+                            <img src="https://placehold.co/60x40/png?text=UPC" alt="Group" class="group-img">
+                            <span class="group-name">UPC Cycling</span>
+                        </div>
+                        <div class="group-item">
+                            <img src="https://placehold.co/60x40/png?text=Gym" alt="Group" class="group-img">
+                            <span class="group-name">Gimnasio Real Club</span>
+                        </div>
+                        <div class="group-item">
+                            <img src="https://placehold.co/60x40/png?text=Run" alt="Group" class="group-img">
+                            <span class="group-name">Runners Lima</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Info & Feed -->
+            <div class="feed-column">
+                <!-- Profile Info -->
+                <div class="profile-info-section">
+                    <div class="info-header">
+                        <div class="user-details">
+                            <h1 class="user-fullname">Eduardo M.</h1>
+                            <span class="user-location">📍 Santiago de Surco, Lima</span>
+                            <p class="user-bio">Hola! Bienvenido a mi perfil. Me encanta el ciclismo y el gimnasio.
+                                Siempre buscando nuevos retos! 🚴🏋️‍♂️</p>
+                        </div>
+                        <div class="user-stats">
+                            <div class="stat-box">
+                                <span class="stat-number">90</span>
+                                <span class="stat-label">Seguidores</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number">150</span>
+                                <span class="stat-label">Siguiendo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn-follow">Seguir</button>
+                </div>
+
+                <!-- Personal Feed -->
+                <div class="personal-feed">
+                    <!-- Post Card -->
+                    <div class="card post-card">
+                        <div class="post-header">
+                            <img src="https://placehold.co/50x50/png?text=EM" alt="User Avatar" class="user-avatar">
+                            <div class="post-info">
+                                <span class="user-name">Eduardo M.</span>
+                                <span class="post-time">Hace 5 horas</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">Morning Ride! 🚴</h3>
+                            <p class="post-desc">Gran ruta la de hoy por la costa verde. El clima estuvo perfecto.</p>
+                            <div class="post-image-grid">
+                                <img src="https://placehold.co/300x200/png?text=Ride+1" alt="Post Image">
+                                <img src="https://placehold.co/300x200/png?text=Ride+2" alt="Post Image">
+                                <img src="https://placehold.co/300x200/png?text=Ride+3" alt="Post Image">
+                            </div>
+                        </div>
+                        <div class="post-footer">
+                            <div class="interaction">
+                                <span class="icon">❤️</span>
+                                <span class="count">45</span>
+                            </div>
+                            <div class="interaction">
+                                <span class="icon">💬</span>
+                                <span class="count">12</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>

@@ -1,0 +1,119 @@
+<div class="grupo-detalle-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item active">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="group-banner"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+
+            <!-- Group Header (Overlap) -->
+            <div class="group-header">
+                <div class="avatar-container">
+                    <img src="https://placehold.co/150x150/png?text=Gym" alt="Group Avatar" class="group-avatar">
+                </div>
+                <div class="header-info">
+                    <div class="title-actions">
+                        <h1 class="group-title">Gimnasio Real Club</h1>
+                        <div class="action-buttons">
+                            <button class="btn-create-post" routerLink="/publicar-grupo">+ Crear Post</button>
+                            <button class="btn-joined">Unido</button>
+                        </div>
+                    </div>
+                    <div class="nav-tabs">
+                        <button class="tab-btn active">Retos</button>
+                        <button class="tab-btn secondary">Dejar Grupo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="content-grid">
+
+                <!-- Left Column: Feed -->
+                <div class="feed-column">
+                    <!-- Post Card -->
+                    <div class="card post-card">
+                        <div class="post-header">
+                            <img src="https://placehold.co/50x50/png?text=EM" alt="User Avatar" class="user-avatar">
+                            <div class="post-info">
+                                <span class="user-name">Eduardo M.</span>
+                                <span class="post-time">Hace 2 horas</span>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">Hard day at Gym! 🏋️</h3>
+                            <div class="post-image-container">
+                                <img src="https://placehold.co/600x400/png?text=Gym+Workout" alt="Post Image"
+                                    class="post-image">
+                            </div>
+                        </div>
+                        <div class="post-footer">
+                            <div class="interaction">
+                                <span class="icon">❤️</span>
+                                <span class="count">67</span>
+                            </div>
+                            <div class="interaction">
+                                <span class="icon">💬</span>
+                                <span class="count">18</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Sidebar -->
+                <div class="sidebar-column">
+                    <div class="card info-card">
+                        <p class="group-description">Somos lo mejor en deporte y motivación 🏋️💪</p>
+                        <div class="meta-info">
+                            <span class="created-date">Creado: 11 Marzo 2025</span>
+                            <div class="creator-info">
+                                <img src="https://placehold.co/30x30/png?text=PT" alt="Creator" class="creator-avatar">
+                                <span class="creator-name">Paolo T.</span>
+                            </div>
+                        </div>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <span class="stat-value">505</span>
+                                <span class="stat-label">miembros</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">25+</span>
+                                <span class="stat-label">retos activos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">100+</span>
+                                <span class="stat-label">Publicaciones</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+</div>

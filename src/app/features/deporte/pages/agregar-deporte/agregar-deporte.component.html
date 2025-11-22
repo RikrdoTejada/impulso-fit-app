@@ -1,0 +1,29 @@
+<div class="container mx-auto p-4">
+  <h2 class="text-2xl font-bold mb-4">Agregar Deporte</h2>
+  <form [formGroup]="deporteForm" (ngSubmit)="onSubmit()" class="max-w-lg bg-white p-6 rounded-lg shadow-md">
+    <div class="mb-4">
+      <label for="nombre" class="block text-gray-700 font-bold mb-2">Nombre del Deporte</label>
+      <input type="text" id="nombre" formControlName="nombre" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Ej: Fútbol">
+      <div *ngIf="deporteForm.get('nombre')?.invalid && deporteForm.get('nombre')?.touched" class="text-red-500 text-sm mt-1">
+        El nombre es requerido (min 3 caracteres).
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="descripcion" class="block text-gray-700 font-bold mb-2">Descripción</label>
+      <textarea id="descripcion" formControlName="descripcion" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="3" placeholder="Breve descripción..."></textarea>
+      <div *ngIf="deporteForm.get('descripcion')?.invalid && deporteForm.get('descripcion')?.touched" class="text-red-500 text-sm mt-1">
+        La descripción es requerida.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="icono" class="block text-gray-700 font-bold mb-2">Icono (Opcional)</label>
+      <input type="text" id="icono" formControlName="icono" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="URL o clase de icono">
+    </div>
+
+    <button type="submit" [disabled]="deporteForm.invalid" class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 disabled:bg-gray-400">
+      Registrar Deporte
+    </button>
+  </form>
+</div>
