@@ -23,7 +23,6 @@ export class RegisterComponent {
         const form = event.target as HTMLFormElement;
         const fd = new FormData(form);
 
-        // Compose date parts from three small inputs (dd/mm/yyyy)
         const dia = (fd.get('fecha_dia') as string) ?? '';
         const mes = (fd.get('fecha_mes') as string) ?? '';
         const anio = (fd.get('fecha_anio') as string) ?? '';
@@ -33,7 +32,6 @@ export class RegisterComponent {
             rawFecha = `${dia}/${mes}/${anio}`;
         }
 
-        // Convert fecha from dd/mm/yyyy (user input) to yyyy-mm-dd (backend LocalDate)
         let fechaIso: string | undefined = undefined;
         if (rawFecha) {
             const m = rawFecha.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
@@ -43,13 +41,11 @@ export class RegisterComponent {
                 const yyyy = m[3];
                 fechaIso = `${yyyy}-${mm}-${dd}`;
             } else {
-                // if user entered ISO already
                 const isoMatch = rawFecha.match(/^(\d{4})-(\d{2})-(\d{2})$/);
                 if (isoMatch) fechaIso = rawFecha;
             }
         }
 
-        // validate confirm password
         const pass = (fd.get('password') as string) ?? '';
         const conf = (fd.get('confirm-password') as string) ?? '';
         if (conf && pass !== conf) {
@@ -57,7 +53,6 @@ export class RegisterComponent {
             return;
         }
 
-        // parse cod_pregunta from form: send enum-name string (MASCOT/TEACHER/NICKNAME)
         const rawCod = fd.get('cod_pregunta');
         let codPreguntaValue: string | undefined = undefined;
         if (rawCod !== null) {
@@ -95,14 +90,12 @@ export class RegisterComponent {
                         localStorage.setItem('auth_name', res.name ?? '');
                     }
                 } catch (e) {
-                    // ignore storage errors
                 }
                 this.router.navigate(['/home']);
             },
             error: (err: any) => {
                 this.loading = false;
                 console.error('register error', err);
-                // Prefer backend message when available, otherwise show the whole error for debugging
                 if (err?.error?.message) {
                     this.error = err.error.message;
                 } else if (err?.error) {
