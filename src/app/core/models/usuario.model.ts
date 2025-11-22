@@ -7,12 +7,12 @@ export enum RoleType {
 
 export interface RegisterRequestDTO {
   email: string;
-  password: string;
+  contrasena: string;
 }
 
 export interface LoginRequestDTO {
   email: string;
-  password: string;
+  contrasena: string;
 }
 
 //response

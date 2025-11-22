@@ -2,7 +2,7 @@ import { inject, Injectable, signal } from '@angular/core';
 import { StorageService } from './storage.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { environment } from '../../../environments/environment.prod';
+import { environment } from '../../../environments/environment';
 import { AuthResponseDTO, LoginRequestDTO, PerfilResponseDTO, RegisterRequestDTO, RoleType } from '../models/usuario.model';
 import { Observable, tap } from 'rxjs';
 

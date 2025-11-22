@@ -1,5 +1,4 @@
 <div class="login-container">
-    <!-- Header -->
     <header class="header">
         <div class="header-content">
             <div class="logo">
@@ -9,26 +8,58 @@
         </div>
     </header>
 
-    <!-- Main Body -->
     <main class="main-content">
         <div class="split-screen">
-            <!-- Left Column: Form -->
             <div class="form-column">
                 <div class="form-wrapper">
                     <h1>Iniciar Sesión</h1>
-                    <form class="login-form">
+
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+                        
+                        <div *ngIf="errorMessage()" class="alert alert-danger" style="color: red; margin-bottom: 1rem;">
+                            {{ errorMessage() }}
+                        </div>
+
                         <div class="form-group full-width">
                             <label for="email">Correo</label>
-                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                formControlName="email"
+                                placeholder="ejemplo@correo.com"
+                                [class.error]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+                            >
+                            <small *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" style="color: red;">
+                                Correo inválido
+                            </small>
                         </div>
 
                         <div class="form-group full-width">
                             <label for="password">Contraseña</label>
-                            <input type="password" id="password" name="password" placeholder="********">
+                            <div class="password-wrapper" style="position: relative;">
+                                <input 
+                                    [type]="showPassword() ? 'text' : 'password'" 
+                                    id="password" 
+                                    formControlName="password"
+                                    placeholder="********"
+                                    style="width: 100%;"
+                                >
+                                <button type="button" (click)="togglePassword()" style="position: absolute; right: 10px; top: 25%; border: none; background: none; cursor: pointer;">
+                                    {{ showPassword() ? '🙈' : '👁️' }}
+                                </button>
+                            </div>
                             <a routerLink="/recuperar-contrasena" class="forgot-password">¿Olvidaste tu contraseña?</a>
                         </div>
 
-                        <button type="button" class="btn-submit" (click)="ingresar()">Ingresar</button>
+                        <button 
+                            type="submit" 
+                            class="btn-submit" 
+                            [disabled]="loginForm.invalid || loading()"
+                            [style.opacity]="(loginForm.invalid || loading()) ? '0.7' : '1'"
+                        >
+                            <span *ngIf="!loading()">Ingresar</span>
+                            <span *ngIf="loading()">Cargando...</span>
+                        </button>
 
                         <hr class="separator">
 
@@ -37,7 +68,6 @@
                 </div>
             </div>
 
-            <!-- Right Column: Image -->
             <div class="image-column">
                 <div class="image-wrapper">
                     <img src="https://placehold.co/600x800/png?text=Runners+Illustration" alt="Runners Illustration">
