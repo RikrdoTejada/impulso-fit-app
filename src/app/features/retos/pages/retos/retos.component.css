@@ -1,0 +1,252 @@
+/* Variables */
+:host {
+    --color-header: #10232B;
+    --color-primary: #2FD0AF;
+    /* Turquoise */
+    --color-banner: #3A5A78;
+    --color-background: #FFFFFF;
+    --color-card-bg: #F7F9FC;
+    --color-text-main: #000000;
+    --color-text-secondary: #666666;
+    --font-family: 'Roboto', sans-serif;
+}
+
+.retos-container {
+    font-family: var(--font-family);
+    min-height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: var(--color-header);
+    padding: 0.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+.logo-icon {
+    color: var(--color-primary);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    opacity: 1;
+}
+
+.nav-item.active {
+    color: var(--color-primary);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Banner */
+.group-banner {
+    height: 200px;
+    background-color: var(--color-banner);
+    width: 100%;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0 2rem 4rem;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Group Header (Overlap) */
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: -50px;
+    /* Overlap banner */
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.group-info {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.avatar-container {
+    position: relative;
+}
+
+.group-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #FFFFFF;
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.group-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin: 0 0 1rem;
+}
+
+.btn-create-challenge {
+    background-color: var(--color-primary);
+    color: var(--color-text-main);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: opacity 0.3s;
+}
+
+.btn-create-challenge:hover {
+    opacity: 0.9;
+}
+
+/* Challenges Section */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+/* Challenge Card */
+.challenge-card {
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px);
+}
+
+.challenge-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: var(--color-text-main);
+}
+
+.challenge-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.btn-join {
+    background-color: var(--color-primary);
+    color: var(--color-text-main);
+    border: none;
+    padding: 0.6rem 2rem;
+    border-radius: 50px;
+    /* Pill shape */
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.btn-join:hover {
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .challenges-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .group-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: -75px;
+    }
+
+    .group-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .group-title {
+        margin-bottom: 0.5rem;
+    }
+
+    .challenges-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-text {
+        display: none;
+    }
+}

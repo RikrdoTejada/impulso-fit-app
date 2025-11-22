@@ -1,0 +1,279 @@
+/* Variables */
+:host {
+    --color-header: #10232B;
+    --color-primary: #2FD0AF;
+    /* Turquoise */
+    --color-background: #FFFFFF;
+    --color-text-main: #000000;
+    --color-text-secondary: #666666;
+    --color-active-day: #4273C2;
+    /* Blue for active days */
+    --color-inactive-day: #E0E0E0;
+    /* Light grey for inactive days */
+    --font-family: 'Roboto', sans-serif;
+}
+
+.estadisticas-container {
+    font-family: var(--font-family);
+    min-height: 100vh;
+    background-color: var(--color-background);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    background-color: var(--color-header);
+    padding: 0.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #FFFFFF;
+}
+
+.logo-icon {
+    color: var(--color-primary);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    opacity: 1;
+}
+
+.nav-item.active {
+    color: var(--color-primary);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Profile Summary Section */
+.profile-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    gap: 2rem;
+}
+
+.profile-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex: 2;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.user-fullname {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin: 0;
+}
+
+.user-location {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+.user-bio {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    max-width: 400px;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
+.profile-right {
+    display: flex;
+    gap: 3rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+}
+
+.stat-label {
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+}
+
+/* Activity Section */
+.activity-section {
+    display: flex;
+    gap: 4rem;
+}
+
+.activity-column {
+    flex: 1;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    max-width: 400px;
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.calendar-day {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-inactive-day);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin: 0 auto;
+}
+
+.calendar-day.active {
+    background-color: var(--color-active-day);
+    color: #FFFFFF;
+}
+
+/* Challenges Column */
+.challenges-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    width: 100%;
+}
+
+.challenges-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.group-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.challenge-items {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    color: var(--color-text-main);
+}
+
+.challenge-items li {
+    margin-bottom: 0.3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-summary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .profile-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .profile-right {
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .activity-section {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .calendar-grid {
+        margin: 0 auto;
+    }
+
+    .nav-text {
+        display: none;
+    }
+}

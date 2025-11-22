@@ -1,0 +1,95 @@
+<div class="crear-reto-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item active">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="form-card">
+            <div class="form-header">
+                <h1 class="form-title">Crear Nuevo Reto</h1>
+                <p class="form-subtitle">Desafía a tu comunidad y motívalos a superarse.</p>
+            </div>
+
+            <form (ngSubmit)="crearReto()">
+                <!-- Challenge Name -->
+                <div class="form-group">
+                    <label for="nombreReto">Nombre del Reto</label>
+                    <input type="text" id="nombreReto" [(ngModel)]="nombreReto" name="nombreReto" class="form-input"
+                        placeholder="Ej: 30 Días de Plancha">
+                </div>
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" [(ngModel)]="descripcion" name="descripcion" class="form-textarea"
+                        placeholder="Describe el objetivo y las reglas del reto..."></textarea>
+                </div>
+
+                <!-- Duration & Type Row -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="duracion">Duración (Días)</label>
+                        <input type="number" id="duracion" [(ngModel)]="duracion" name="duracion" class="form-input"
+                            placeholder="Ej: 30">
+                    </div>
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Ejercicio</label>
+                        <select id="tipo" [(ngModel)]="tipo" name="tipo" class="form-select">
+                            <option value="" disabled selected>Seleccionar</option>
+                            <option value="Cardio">Cardio</option>
+                            <option value="Fuerza">Fuerza</option>
+                            <option value="Flexibilidad">Flexibilidad</option>
+                            <option value="Mixto">Mixto</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Difficulty -->
+                <div class="form-group">
+                    <label class="difficulty-label">Dificultad</label>
+                    <div class="radio-group-horizontal">
+                        <label class="radio-option">
+                            <input type="radio" name="dificultad" value="principiante" [(ngModel)]="dificultad">
+                            <span class="radio-text">Principiante</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="dificultad" value="intermedio" [(ngModel)]="dificultad">
+                            <span class="radio-text">Intermedio</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="dificultad" value="avanzado" [(ngModel)]="dificultad">
+                            <span class="radio-text">Avanzado</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions">
+                    <button type="button" class="btn-cancel" (click)="cancelar()">Cancelar</button>
+                    <button type="submit" class="btn-create">Crear Reto</button>
+                </div>
+            </form>
+        </div>
+    </main>
+</div>

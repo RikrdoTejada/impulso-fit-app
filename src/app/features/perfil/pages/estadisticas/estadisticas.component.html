@@ -1,0 +1,94 @@
+<div class="estadisticas-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item active">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+
+            <!-- Profile Summary Section -->
+            <section class="profile-summary">
+                <div class="profile-left">
+                    <div class="avatar-container">
+                        <img src="https://placehold.co/120x120/png?text=EM" alt="User Avatar" class="profile-avatar">
+                    </div>
+                    <div class="profile-details">
+                        <h1 class="user-fullname">Eduardo M.</h1>
+                        <span class="user-location">📍 Santiago de Surco, Lima</span>
+                        <p class="user-bio">Hola! Bienvenido a mi perfil. Me encanta el ciclismo y el gimnasio. Siempre
+                            buscando nuevos retos! 🚴🏋️‍♂️</p>
+                    </div>
+                </div>
+                <div class="profile-right">
+                    <div class="stat-box">
+                        <span class="stat-number">90</span>
+                        <span class="stat-label">Seguidores</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">150</span>
+                        <span class="stat-label">Siguiendo</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Activity Section -->
+            <section class="activity-section">
+
+                <!-- Left Column: Calendar -->
+                <div class="activity-column calendar-column">
+                    <div class="calendar-grid">
+                        <!-- Headers -->
+                        <div class="calendar-header">D</div>
+                        <div class="calendar-header">L</div>
+                        <div class="calendar-header">M</div>
+                        <div class="calendar-header">M</div>
+                        <div class="calendar-header">J</div>
+                        <div class="calendar-header">V</div>
+                        <div class="calendar-header">S</div>
+
+                        <!-- Days -->
+                        <div *ngFor="let day of calendarDays" class="calendar-day" [class.active]="day.active">
+                            {{ day.value }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Completed Challenges -->
+                <div class="activity-column challenges-column">
+                    <h3 class="challenges-title">Retos Cumplidos</h3>
+                    <div class="challenges-list">
+                        <div *ngFor="let group of completedChallenges" class="challenge-group">
+                            <h4 class="group-name">{{ group.groupName }}</h4>
+                            <ul class="challenge-items">
+                                <li *ngFor="let challenge of group.challenges">{{ challenge }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+</div>

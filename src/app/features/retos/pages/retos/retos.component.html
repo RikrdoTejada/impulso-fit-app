@@ -1,0 +1,57 @@
+<div class="retos-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item active">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="group-banner"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+            <!-- Group Header (Overlap) -->
+            <div class="group-header">
+                <div class="group-info">
+                    <div class="avatar-container">
+                        <img src="https://placehold.co/150x150/png?text=GR" alt="Group Avatar" class="group-avatar">
+                    </div>
+                    <h1 class="group-title">Gimnasio Real Club</h1>
+                </div>
+                <button routerLink="/crear-reto" class="btn-create-challenge">+ Crear Reto</button>
+            </div>
+
+            <!-- Challenges Section -->
+            <section class="challenges-section">
+                <h2 class="section-title">Retos Activos</h2>
+
+                <div class="challenges-grid">
+                    <div class="challenge-card" *ngFor="let reto of retos">
+                        <h3 class="challenge-title">{{ reto.titulo }}</h3>
+                        <p class="challenge-desc">{{ reto.descripcion }}</p>
+                        <button routerLink="/detalle-reto" class="btn-join">Unirse</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>

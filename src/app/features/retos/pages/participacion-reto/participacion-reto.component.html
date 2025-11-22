@@ -1,0 +1,97 @@
+<div class="participacion-reto-container">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">ImpulsoFit</span>
+            </div>
+            <nav class="nav-menu">
+                <a routerLink="/home" class="nav-item">
+                    <span class="nav-icon">🏠</span>
+                    <span class="nav-text">Inicio</span>
+                </a>
+                <a routerLink="/grupos" class="nav-item active">
+                    <span class="nav-icon">👥</span>
+                    <span class="nav-text">Grupos</span>
+                </a>
+                <a routerLink="/perfil" class="nav-item">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">Perfil</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="content-wrapper">
+
+            <!-- Challenge Header -->
+            <section class="challenge-header">
+                <h1 class="challenge-title">Reto: “50K Sobre Ruedas” <span class="author">Por: Eduardo M.</span></h1>
+
+                <div class="description-box">
+                    <p class="description-text">
+                        Este reto consiste en acumular 50 kilómetros en bicicleta durante una semana.
+                        Es ideal para mejorar tu resistencia cardiovascular y disfrutar del aire libre.
+                    </p>
+                    <div class="rules-list">
+                        <p class="rules-title">Reglas:</p>
+                        <ol>
+                            <li>Completar 50km en un máximo de 7 días.</li>
+                            <li>Se aceptan distintos tipos de bicicleta (ruta, montaña, estática).</li>
+                            <li>Debes registrar tu progreso diariamente.</li>
+                            <li>Diviértete y comparte tus fotos en el grupo.</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section">
+                <div class="progress-controls">
+                    <label class="progress-label">Tu progreso:</label>
+                    <div class="my-progress-bar-container">
+                        <div class="my-progress-bar" [style.width.%]="miProgreso"></div>
+                    </div>
+                    <input type="number" [(ngModel)]="progresoInput" class="progress-input" placeholder="0">
+                    <button class="btn-upload" (click)="subirProgreso()">Subir</button>
+                </div>
+                <button class="btn-status">Unido al reto</button>
+            </section>
+
+            <!-- Ranking Table -->
+            <section class="ranking-section">
+                <h3 class="ranking-title">Tabla de entradas</h3>
+
+                <div class="ranking-table-container">
+                    <table class="ranking-table">
+                        <thead>
+                            <tr>
+                                <th class="col-rank">Puesto</th>
+                                <th class="col-user">Usuario</th>
+                                <th class="col-progress">Progreso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let entry of ranking">
+                                <td class="col-rank"><span class="rank-number">{{ entry.puesto }}</span></td>
+                                <td class="col-user">{{ entry.usuario }}</td>
+                                <td class="col-progress">
+                                    <div class="progress-bar-container">
+                                        <div class="progress-track">
+                                            <div class="progress-fill" [style.width.%]="entry.progreso"></div>
+                                        </div>
+                                        <span class="progress-text">{{ entry.progreso }}%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </main>
+</div>

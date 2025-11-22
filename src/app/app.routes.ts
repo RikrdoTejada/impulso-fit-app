@@ -26,6 +26,10 @@ export const routes: Routes = [
         loadComponent: () => import('./features/auth/pages/register/register.component').then(m => m.RegisterComponent)
     },
     {
+        path: 'crear-perfil',
+        loadComponent: () => import('./features/auth/pages/crear-perfil/crear-perfil.component').then(m => m.CrearPerfilComponent)
+    },
+    {
         path: 'home',
         loadComponent: () => import('./features/home/pages/home/home.component').then(m => m.HomeComponent)
     },
@@ -64,6 +68,26 @@ export const routes: Routes = [
     {
         path: 'crear-grupo',
         loadComponent: () => import('./features/grupos/pages/crear-grupo/crear-grupo.component').then(m => m.CrearGrupoComponent)
+    },
+    {
+        path: 'retos',
+        loadComponent: () => import('./features/retos/pages/retos/retos.component').then(m => m.RetosComponent)
+    },
+    {
+        path: 'crear-reto',
+        loadComponent: () => import('./features/retos/pages/crear-reto/crear-reto.component').then(m => m.CrearRetoComponent)
+    },
+    {
+        path: 'detalle-reto',
+        loadComponent: () => import('./features/retos/pages/detalle-reto/detalle-reto.component').then(m => m.DetalleRetoComponent)
+    },
+    {
+        path: 'participacion-reto',
+        loadComponent: () => import('./features/retos/pages/participacion-reto/participacion-reto.component').then(m => m.ParticipacionRetoComponent)
+    },
+    {
+        path: 'estadisticas',
+        loadComponent: () => import('./features/perfil/pages/estadisticas/estadisticas.component').then(m => m.EstadisticasComponent)
     }
 ];
 

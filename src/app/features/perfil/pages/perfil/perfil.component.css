@@ -3,7 +3,6 @@
     --color-header: #10232B;
     --color-primary: #2FD0AF;
     --color-background: #FFFFFF;
-    /* White background for profile main container as per request */
     --color-white: #FFFFFF;
     --color-text-main: #000000;
     --color-text-secondary: #666666;
@@ -243,7 +242,6 @@
 /* Post Card (Reused styles) */
 .card {
     background-color: #F7FAFF;
-    /* Light background for card to distinguish from white page */
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     padding: 1.5rem;
